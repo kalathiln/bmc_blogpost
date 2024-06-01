@@ -52,10 +52,8 @@ This guide will walk you through the preliminary steps to create a new Flask pro
 - Ensure that the correct Python interpreter is selected in VS Code.
 - Typically, you can find the interpreter option in the bottom right corner of the IDE.
 
-Sure, here is the content formatted for a Markdown file:
 
-```markdown
-# Connecting Flask to MongoDB Using PyMongo
+### Connecting Flask to MongoDB Using PyMongo
 
 ## Step 1: Install Dependencies
 Ensure you have `Flask` and `pymongo` installed in your Python environment.
