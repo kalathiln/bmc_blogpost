@@ -1,6 +1,14 @@
+import datetime
+import os
+import certifi
 from flask import Flask, render_template, request
 from pymongo import MongoClient
-import datetime
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+
 # MongoCLient is used in order to create a client side db session
 # to connect with the Mongodb Atlas/ Compass
 
@@ -16,15 +24,13 @@ def create_app():
     app = Flask(__name__)
 
     # Make the connection using the connection string
-    client = MongoClient("mongodb+srv://nikhkk:bdat9LopGNOCwILJ@bmcblogpostazcluster01.isvkrcw.mongodb.net/")
+    client = MongoClient(os.getenv("MONGODB_URI"), tlsCAFile=certifi.where())
     # create a db session now using this connection
     app.db = client.microblog
 
     @app.route("/", methods=["GET", "POST"])
     def home():
-        # List comprehension
-        print([e for e in app.db.entries.find({})])
-
+        
         if request.method == "POST":
             # Flask lets you access the request form, and get information, 
             # in this case the content[name of the textArea on the html file] of the blogpost.  
