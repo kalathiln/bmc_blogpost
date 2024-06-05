@@ -1,78 +1,36 @@
 {% from "macros.jinja2" import todo_li, todo_lists %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+{% block head %}
+<style>
+    .main {
+        width: 100%;
+        margin: 0 auto;
+        padding: 200px 200px;
+        flex:1;
+        flex-direction: column;
+        margin-right: 300px;
+        margin-left: 300px;
+    }
+</style>
+{% endblock %}
 
+{% block content %}
+<main class="main">
+    <section>
+        <h1>Here comes today's todo List</h1>
+        <!-- Use set to create variables and pipe inorder to implement different filters functions -->
+            {% set num_todos = todos| length  %}
 
-</head>
-
-<body>
-    
-    <header class="navbar">
-        <div class="navbar__brand">
-            <img class="navbar__logo" src="/static/css/logo/Xiannguwears.png" alt="The microblog-logo" /> Todo
-        </div>
-        <div class="navbar__navigation">
-            <ul class="navbar__navigation">
-                <li class="navbar__navigation-item">
-                    <a href="#" class="navbar__link">Recent</a>
-                    <a href="#" class="navbar__link">Calendar</a>
-                </li>
-            </ul>
-        </div>
-    </header>
-   
-    
-    <!--  MAIN SECTION -->
-    
-    <main class="main">
-        
-
-        <section>
-            <h1>Here comes today's todo List</h1>
-            <!-- Use set to create variables and pipe inorder to implement different filters functions -->
-                {% set num_todos = todos| length  %}
-
-                {% if num_todos > 0 %}
-                    <p>
-                        You have {{num_todos}} stuff to do today!!
-                        {{ todo_lists(todos) }}
-                    </p>
-                {% else %}
-                    <p> Congratulations!!! You have no tasks left to do :) </p>
-                {% endif %}
-        </section>
-    </main>
-
-
-<!-- FOOTER SECTION -->
-
-
-    <footer class="footer">
-        <div class="footer__content">
-            <section class="left">
-                <a class="footer__item"> Website designed by : Nikhil Kalathil</a>
-                <a class="footer__item"> Check out my other projects</a>
-            </section>
-            <section class="right">
-                <div class="footer__column">
-                    <a class="footer__item" href="#"> Recent</a>
-                    <a class="footer__item"> Calendar</a>
-                </div>
-                <div class="footer__column">
-                    <a class="footer__item"> About</a>
-                    <a class="footer__item"> How this was made!!</a>
-                </div>
-            </section>
-        </div>
-
-    </footer>
-</body>
-
-</html>
+            {% if num_todos > 0 %}
+                <p>
+                    You have {{num_todos}} stuff to do today!!
+                    {{ todo_lists(todos) }}
+                </p>
+            {% else %}
+                <p> Congratulations!!! You have no tasks left to do :) </p>
+            {% endif %}
+    </section>
+</main>
+{% endblock %}

@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-
-
-</head>
-
-<body>
-    <header class="navbar">
-        <div class="navbar__brand">
-            <img class="navbar__logo" src="/static/css/logo/Xiannguwears.png" alt="The microblog-logo" /> MicroBlog
-        </div>
-        <div class="navbar__navigation">
-            <ul class="navbar__navigation">
-                <li class="navbar__navigation-item">
-                    <a href="#" class="navbar__link">Recent</a>
-                    <a href="#" class="navbar__link">Calendar</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+{% block content %} 
     <main class="main">
         <section>
             <h1>Add new entry</h1>
@@ -52,25 +29,4 @@
             {% endfor %}
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer__content">
-            <section class="left">
-                <a class="footer__item"> Website designed by : Nikhil Kalathil</a>
-                <a class="footer__item"> Check out my other projects</a>
-            </section>
-            <section class="right">
-                <div class="footer__column">
-                    <a class="footer__item" href="#"> Recent</a>
-                    <a class="footer__item"> Calendar</a>
-                </div>
-                <div class="footer__column">
-                    <a class="footer__item"> About</a>
-                    <a class="footer__item"> How this was made!!</a>
-                </div>
-            </section>
-        </div>
-
-    </footer>
-</body>
-
-</html>
+{% endblock %}

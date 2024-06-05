@@ -17,7 +17,8 @@ body{
     background-color: #fbe9d0;
     display: flex;
     flex-direction: column;
-
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 21px;
 
 }
 
@@ -31,6 +32,7 @@ body{
     font-size: 24px;
     background-color: #244855;
     color: silver;
+    font-family: fantasy;
 }
 
 .navbar__brand {
@@ -67,10 +69,11 @@ body{
 }
 
 .main {
-    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-    flex:2;
+    padding: 20 20px;
+    flex:1;
+    flex-direction: column;
 }
 
 .form {
@@ -94,7 +97,8 @@ body{
     padding: 12px 18px;
     box-sizing: content;
     border: none;
-    background-color: #90AEAD;
+    background-color: #accacb;
+    /* background-color: rgb(226, 226, 193); */
     border-radius: 12px;
     width: 100%;
     height: 240px;
@@ -155,6 +159,7 @@ body{
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    font-family: monospace;
 }
 
 .footer .left{
