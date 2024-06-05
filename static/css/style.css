@@ -14,7 +14,7 @@ body{
     margin: 0;
     background-image: url("../../flask-python-web-project/images/Bild019_Neg.Nr.30.jpg");
     background-size: cover;
-    background-color: #90AEAD;
+    background-color: #fbe9d0;
     display: flex;
     flex-direction: column;
 
@@ -22,14 +22,15 @@ body{
 }
 
 .navbar {
-    max-width: 1200px;
-    /* margin: 50px; */
-    /* padding: 0 20px; */
+    /* max-width: 1200px; */
+    /* margin: 50px; 
+    padding: 0 20px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 24px;
-    background-color: #fbe9d0;
+    background-color: #244855;
+    color: silver;
 }
 
 .navbar__brand {
@@ -56,6 +57,7 @@ body{
 
 .navbar__navigation-item {
     margin-left: 0;
+    color: silver;
 }
 
 .navbar__link {
@@ -65,10 +67,10 @@ body{
 }
 
 .main {
-    max-width: 900px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    flex: 1;
+    flex:2;
 }
 
 .form {
@@ -92,20 +94,20 @@ body{
     padding: 12px 18px;
     box-sizing: content;
     border: none;
-    background-color: #748D92;
+    background-color: #90AEAD;
     border-radius: 12px;
     width: 100%;
-    height: 150px;
+    height: 240px;
 }
 
 .form__submit {
-    background-color: #E64833;
+    background-color: #90AEAD;
     border: none;
     font-size: 18px;
     font-weight: bold;
     padding: 5px 30px;
     border-radius: 20px;
-    color: black;
+    color: #E7717D;
     cursor: pointer;
 }
 
@@ -115,12 +117,13 @@ body{
 
 .entry {
     margin-top: 50px;
-
+    overflow: scroll;
 }
 
 .entry__title {
     display: inline;
     font-size: 18px;
+    
 }
 
 .entry__date {
@@ -130,6 +133,7 @@ body{
 .entry__content {
     font: size 12px;
     line-height: 150%;
+    
 }
 
 .footer {
@@ -137,11 +141,11 @@ body{
     position:fixed;
     bottom:0;
     width:100%;
-    background-color: #fbe9d0;
+    background-color: #244855;
     padding: 36px 0;
     margin-top: 0%;
     border-top: 4px solid black;
-    color: #E64833;
+    color: silver;
     font-size: 15px;
 
 }

@@ -4,7 +4,6 @@ import certifi
 from flask import Flask, render_template, request
 from pymongo import MongoClient
 from dotenv import load_dotenv
-
 # This is used to load environmanet variables from the .env file during deploytment.
 load_dotenv()
 
@@ -56,6 +55,8 @@ def create_app():
             "entries" : entries_with_date
         }
         return render_template("home.html", **kwargs)
+    
+    
     
     @app.route("/todo", methods=["GET", "POST"])
     def todo():
