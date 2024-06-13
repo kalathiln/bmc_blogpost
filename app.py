@@ -70,7 +70,21 @@ def create_app():
             "todos" : todos
         }
         return render_template("todo.html", **kwargs)
+    
+    @app.route("/portfolio")
+    def portfolio():
+        return render_template("portfolio2.html")
+    
+    @app.route("/fizzbuzz")
+    def fizzbuzz():
+        return render_template("fizzbuzz.html")
+    
+    def square(value):
+        return (value ** 0.5).is_integer()
+    
 
+    app.jinja_env.tests["square"] = square
+    
     return app
 
     

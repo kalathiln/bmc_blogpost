@@ -12,20 +12,18 @@ html {
 body{
     box-sizing: border-box;
     margin: 0;
-    background-image: url("../../flask-python-web-project/images/Bild019_Neg.Nr.30.jpg");
     background-size: cover;
     background-color: #fbe9d0;
     display: flex;
     flex-direction: column;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 21px;
+    /* background-image: url("/static/css/logo/bad_urach_farmhouse.jpeg"); */
+    background-image: repeating-conic-gradient(rgb(0, 255, 21) 10%, yellow 20%);
 
 }
 
 .navbar {
-    /* max-width: 1200px; */
-    /* margin: 50px; 
-    padding: 0 20px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -92,16 +90,18 @@ body{
 }
 
 .form__textarea {
-    /* width: inherit; */
     font-size: 15px;
     padding: 12px 18px;
     box-sizing: content;
     border: none;
     background-color: #accacb;
-    /* background-color: rgb(226, 226, 193); */
     border-radius: 12px;
     width: 100%;
     height: 240px;
+}
+
+.form__textarea:hover {
+    background-color: #874F41;
 }
 
 .form__submit {
