@@ -1,0 +1,36 @@
+{% from "macros.jinja2" import todo_li, todo_lists %}
+
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    .main {
+        width: 100%;
+        margin: 0 auto;
+        padding: 200px 200px;
+        flex:1;
+        flex-direction: column;
+        margin-right: 300px;
+        margin-left: 300px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="main">
+    <section>
+        <h1>Here comes today's todo List</h1>
+        <!-- Use set to create variables and pipe inorder to implement different filters functions -->
+            {% set num_todos = todos| length  %}
+
+            {% if num_todos > 0 %}
+                <p>
+                    You have {{num_todos}} stuff to do today!!
+                    {{ todo_lists(todos) }}
+                </p>
+            {% else %}
+                <p> Congratulations!!! You have no tasks left to do :) </p>
+            {% endif %}
+    </section>
+</main>
+{% endblock %}

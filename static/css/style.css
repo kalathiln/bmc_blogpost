@@ -1,5 +1,6 @@
 html {
     font-family: Lato, sans-serif;
+    background-color: #90AEAD;
 }
 
 *,
@@ -11,18 +12,25 @@ html {
 body{
     box-sizing: border-box;
     margin: 0;
-    background-image: url("../../flask-python-web-project/images/Bild019_Neg.Nr.30.jpg");
     background-size: cover;
+    background-color: #fbe9d0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 21px;
+    /* background-image: url("/static/css/logo/bad_urach_farmhouse.jpeg"); */
+    background-image: repeating-conic-gradient(rgb(0, 255, 21) 10%, yellow 20%);
+
 }
 
 .navbar {
-    max-width: 1200px;
-    margin: 50px;
-    padding: 0 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 24px;
+    background-color: #244855;
+    color: silver;
+    font-family: fantasy;
 }
 
 .navbar__brand {
@@ -32,6 +40,10 @@ body{
 
 .navbar__logo {
     margin-right: 30px;
+    margin-left: 30px;
+    right:0%;
+    width: 60px;
+    height: 60px;
 }
 
 .navbar__navigation {
@@ -44,7 +56,8 @@ body{
 }
 
 .navbar__navigation-item {
-    margin-left: 150px;
+    margin-left: 0;
+    color: silver;
 }
 
 .navbar__link {
@@ -54,9 +67,11 @@ body{
 }
 
 .main {
-    max-width: 450px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20 20px;
+    flex:1;
+    flex-direction: column;
 }
 
 .form {
@@ -75,38 +90,44 @@ body{
 }
 
 .form__textarea {
-    width: inherit;
-    font-size: 18px;
+    font-size: 15px;
     padding: 12px 18px;
-    box-sizing: border-box;
+    box-sizing: content;
     border: none;
-    background-color: #f3f6f6;
-    border-radius: 18px;
+    background-color: #accacb;
+    border-radius: 12px;
+    width: 100%;
+    height: 240px;
+}
+
+.form__textarea:hover {
+    background-color: #874F41;
 }
 
 .form__submit {
-    background-color: #3cd0ff;
+    background-color: #90AEAD;
     border: none;
     font-size: 18px;
     font-weight: bold;
     padding: 5px 30px;
     border-radius: 20px;
-    color: white;
+    color: #E7717D;
     cursor: pointer;
 }
 
 .form__submit:hover {
-    background-color: #18c1e1;
+    background-color: #874F41;
 }
 
 .entry {
     margin-top: 50px;
-
+    overflow: scroll;
 }
 
 .entry__title {
     display: inline;
     font-size: 18px;
+    
 }
 
 .entry__date {
@@ -114,17 +135,22 @@ body{
 }
 
 .entry__content {
-    font-size: 16px;
+    font: size 12px;
     line-height: 150%;
+    
 }
 
 .footer {
-    background-color: #323f43;
-    padding: 40px 0;
-    margin-top: 50px;
+    clear: both;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background-color: #244855;
+    padding: 36px 0;
+    margin-top: 0%;
     border-top: 4px solid black;
-    color: white;
-    font-size: 12px;
+    color: silver;
+    font-size: 15px;
 
 }
 
@@ -133,16 +159,18 @@ body{
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    font-family: monospace;
 }
 
 .footer .left{
-    flex-grow: 2;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    padding-left: 30px;
 }
 
 .footer .right{
-    flex-grow: 1;
+    flex-grow: 2;
     display: flex;
     flex-direction: row;
 }
@@ -154,7 +182,7 @@ body{
 }
 
 .footer__item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: inherit;
     text-decoration: none;
 }

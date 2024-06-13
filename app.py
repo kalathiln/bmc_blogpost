@@ -4,8 +4,7 @@ import certifi
 from flask import Flask, render_template, request
 from pymongo import MongoClient
 from dotenv import load_dotenv
-
-
+# This is used to load environmanet variables from the .env file during deploytment.
 load_dotenv()
 
 
@@ -29,8 +28,9 @@ def create_app():
     app.db = client.microblog
 
     @app.route("/", methods=["GET", "POST"])
-    def home():
-        
+    @app.route("/blog", methods=["GET", "POST"])
+    def blog():
+
         if request.method == "POST":
             # Flask lets you access the request form, and get information, 
             # in this case the content[name of the textArea on the html file] of the blogpost.  
@@ -55,4 +55,38 @@ def create_app():
             "entries" : entries_with_date
         }
         return render_template("home.html", **kwargs)
+    
+    
+    
+    @app.route("/todo", methods=["GET", "POST"])
+    def todo():
+
+        todos = [("Set up the venilation", False) ,
+                 ("Take the trash out", True)   ]
+
+        #  **kwargs is a special syntax that allows us to pass a variable length of keyword arguments to the function.
+        #   - It means : Keyword Arguments
+        kwargs = {
+            "todos" : todos
+        }
+        return render_template("todo.html", **kwargs)
+    
+    @app.route("/portfolio")
+    def portfolio():
+        return render_template("portfolio2.html")
+    
+    @app.route("/fizzbuzz")
+    def fizzbuzz():
+        return render_template("fizzbuzz.html")
+    
+    def square(value):
+        return (value ** 0.5).is_integer()
+    
+
+    app.jinja_env.tests["square"] = square
+    
     return app
+
+    
+
+
